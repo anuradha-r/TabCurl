@@ -15,6 +15,7 @@
 @implementation QTKScrollBarViewController
 @synthesize slidebarSegmentedControl;
 @synthesize slideBarNavView;
+@synthesize slideButton;
 @synthesize  slideBarTabs;
 @synthesize scrollView;
 @synthesize thumbNails;
@@ -75,6 +76,7 @@
     [self setScrollView:nil];
     [self setSlidebarSegmentedControl:nil];
     [self setSlideBarNavView:nil];
+    [self setSlideButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -95,4 +97,19 @@
     //[self.view addSubview:self.slideBarNavView];
 }
 
+- (IBAction)slideButtonTapped:(id)sender {
+    if([self.slideButton.titleLabel.text isEqualToString:@"expand"]){
+        [self.slideButton setTitle:@"collapse" forState:UIControlStateNormal];
+        CGRect frame = self.slideBarNavView.frame;
+        frame.origin.y = frame.origin.y - self.scrollView.frame.size.height;
+        [self.slideBarNavView setFrame:frame];
+    }
+    else{
+        [self.slideButton setTitle:@"expand" forState:UIControlStateNormal];
+        CGRect frame = self.slideBarNavView.frame;
+        frame.origin.y = frame.origin.y + self.scrollView.frame.size.height;
+        [self.slideBarNavView setFrame:frame];
+
+    }
+}
 @end

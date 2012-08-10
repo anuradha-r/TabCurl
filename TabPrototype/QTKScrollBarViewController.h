@@ -15,5 +15,7 @@
 @property (strong ,nonatomic) NSArray *slideBarTabs;
 @property (strong, nonatomic) UISegmentedControl *slidebarSegmentedControl;
 @property (strong, nonatomic) IBOutlet UIView *slideBarNavView;
+@property (weak, nonatomic) IBOutlet UIButton *slideButton;
+- (IBAction)slideButtonTapped:(id)sender;
 
 @end
