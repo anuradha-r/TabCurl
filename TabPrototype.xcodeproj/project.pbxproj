@@ -21,6 +21,8 @@
 		0A2BB7EC15B9C134006AEA3B /* QTKGreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A2BB7EA15B9C134006AEA3B /* QTKGreenViewController.xib */; };
 		0A2BB7F015B9C153006AEA3B /* QTKYellowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2BB7EE15B9C153006AEA3B /* QTKYellowViewController.m */; };
 		0A2BB7F115B9C153006AEA3B /* QTKYellowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A2BB7EF15B9C153006AEA3B /* QTKYellowViewController.xib */; };
+		B709F64C15D54B9C00E7D073 /* QTKBlackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B709F64A15D54B9C00E7D073 /* QTKBlackViewController.m */; };
+		B709F64D15D54B9C00E7D073 /* QTKBlackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B709F64B15D54B9C00E7D073 /* QTKBlackViewController.xib */; };
 		FF464BF315C1CF08009A39A6 /* QTKSubTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF464BF115C1CF08009A39A6 /* QTKSubTabViewController.m */; };
 		FF464BF415C1CF08009A39A6 /* QTKSubTabViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF464BF215C1CF08009A39A6 /* QTKSubTabViewController.xib */; };
 /* End PBXBuildFile section */
@@ -48,6 +50,9 @@
 		0A2BB7ED15B9C153006AEA3B /* QTKYellowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTKYellowViewController.h; sourceTree = "<group>"; };
 		0A2BB7EE15B9C153006AEA3B /* QTKYellowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTKYellowViewController.m; sourceTree = "<group>"; };
 		0A2BB7EF15B9C153006AEA3B /* QTKYellowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QTKYellowViewController.xib; sourceTree = "<group>"; };
+		B709F64915D54B9C00E7D073 /* QTKBlackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTKBlackViewController.h; sourceTree = "<group>"; };
+		B709F64A15D54B9C00E7D073 /* QTKBlackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTKBlackViewController.m; sourceTree = "<group>"; };
+		B709F64B15D54B9C00E7D073 /* QTKBlackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QTKBlackViewController.xib; sourceTree = "<group>"; };
 		FF464BF015C1CF08009A39A6 /* QTKSubTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTKSubTabViewController.h; sourceTree = "<group>"; };
 		FF464BF115C1CF08009A39A6 /* QTKSubTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTKSubTabViewController.m; sourceTree = "<group>"; };
 		FF464BF215C1CF08009A39A6 /* QTKSubTabViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QTKSubTabViewController.xib; sourceTree = "<group>"; };
@@ -113,6 +118,9 @@
 				0A2BB7ED15B9C153006AEA3B /* QTKYellowViewController.h */,
 				0A2BB7EE15B9C153006AEA3B /* QTKYellowViewController.m */,
 				0A2BB7EF15B9C153006AEA3B /* QTKYellowViewController.xib */,
+				B709F64915D54B9C00E7D073 /* QTKBlackViewController.h */,
+				B709F64A15D54B9C00E7D073 /* QTKBlackViewController.m */,
+				B709F64B15D54B9C00E7D073 /* QTKBlackViewController.xib */,
 			);
 			path = TabPrototype;
 			sourceTree = "<group>";
@@ -197,6 +205,7 @@
 				0A2BB7EC15B9C134006AEA3B /* QTKGreenViewController.xib in Resources */,
 				0A2BB7F115B9C153006AEA3B /* QTKYellowViewController.xib in Resources */,
 				FF464BF415C1CF08009A39A6 /* QTKSubTabViewController.xib in Resources */,
+				B709F64D15D54B9C00E7D073 /* QTKBlackViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +223,7 @@
 				0A2BB7EB15B9C134006AEA3B /* QTKGreenViewController.m in Sources */,
 				0A2BB7F015B9C153006AEA3B /* QTKYellowViewController.m in Sources */,
 				FF464BF315C1CF08009A39A6 /* QTKSubTabViewController.m in Sources */,
+				B709F64C15D54B9C00E7D073 /* QTKBlackViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
