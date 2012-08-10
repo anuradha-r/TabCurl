@@ -12,6 +12,10 @@
 
 @end
 
+#define kNoOfSlidebarThumbnails 4
+#define kThumbnailVerticalPadding 20
+#define kThumbnailHorizontalPadding 30
+
 @implementation QTKScrollBarViewController
 @synthesize slidebarSegmentedControl;
 @synthesize slideBarNavView;
@@ -31,6 +35,8 @@
     self.scrollView.indicatorStyle= UIScrollViewIndicatorStyleBlack;
     [self.scrollView setCanCancelContentTouches:NO];
     [self setupSlidebarSegmentedControl];
+    [self layoutSlidebar];
+    
 //    for (int i =0; i < 5; i++){
 //        NSString *imageName = [NSString stringWithFormat:@"image%d.jpg", i];
 //		UIImage *image = [UIImage imageNamed:imageName];
@@ -112,4 +118,24 @@
 
     }
 }
+
+- (UIImageView *)slideBarThumbnail{
+    UIImageView *thumbnail = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 225, 100)];
+    [thumbnail setBackgroundColor:[UIColor greenColor]];
+    return thumbnail;
+}
+
+- (void)layoutSlidebar{
+    CGPoint start = CGPointMake(15, 65);
+    CGPoint currentPos = start;
+    for(int i = 0; i < kNoOfSlidebarThumbnails; i++){
+        UIImageView *thumbnail = [self slideBarThumbnail];
+        CGRect frame = thumbnail.frame;
+        [thumbnail setFrame:CGRectMake(currentPos.x,currentPos.y,frame.size.width,frame.size.height)];
+        [self.slideBarNavView addSubview:thumbnail];
+        currentPos.x = currentPos.x + thumbnail.frame.size.width + kThumbnailHorizontalPadding;
+        
+    }
+}
+
 @end
