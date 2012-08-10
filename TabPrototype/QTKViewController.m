@@ -23,6 +23,7 @@
 @synthesize blueButton;
 @synthesize yellowButton;
 @synthesize greenButton;
+@synthesize blackButton;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,6 +38,7 @@
     self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationVertical options:options];
     [self.pageViewContainer addSubview:self.pageViewController.view];
     self.pageViewController.view.frame = self.pageViewContainer.frame;
+    self.pageViewContainer.clipsToBounds = YES;
 }
 
 - (void)viewDidUnload {
@@ -45,6 +47,7 @@
     [self setBlueButton:nil];
     [self setYellowButton:nil];
     [self setGreenButton:nil];
+    [self setBlackButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -58,6 +61,7 @@
     self.blueButton.selected = YES;
     self.yellowButton.selected = NO;
     self.greenButton.selected = NO;
+    self.blackButton.selected = NO;
 
     [self.pageViewController setViewControllers:[NSArray arrayWithObject:[self.viewControllers objectAtIndex:0]] direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:^(BOOL finished) {
         NSLog(@"blue was shown");
@@ -71,6 +75,7 @@
     self.blueButton.selected = NO;
     self.yellowButton.selected = YES;
     self.greenButton.selected = NO;
+     self.blackButton.selected = NO;
 
     NSInteger transitionDirection = UIPageViewControllerNavigationDirectionForward;
     if (1 <= self.selectedIndex ) {
@@ -89,12 +94,26 @@
     self.blueButton.selected = NO;
     self.yellowButton.selected = NO;
     self.greenButton.selected = YES;
+     self.blackButton.selected = NO;
 
     [self.pageViewController setViewControllers:[NSArray arrayWithObject:[self.viewControllers objectAtIndex:2]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:^(BOOL finished) {
         NSLog(@"green was shown");
         self.selectedIndex = 2;
     }];
 
+}
+
+- (IBAction)showBlack:(id)sender {
+    self.blueButton.selected = NO;
+    self.yellowButton.selected = NO;
+    self.greenButton.selected = NO;
+    self.blackButton.selected = YES;
+    
+    [self.pageViewController setViewControllers:[NSArray arrayWithObject:[self.viewControllers objectAtIndex:3]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:^(BOOL finished) {
+        NSLog(@"black was shown");
+        self.selectedIndex = 3;
+    }];
+    
 }
 
 

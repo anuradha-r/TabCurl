@@ -23,6 +23,17 @@
 		0A2BB7F115B9C153006AEA3B /* QTKYellowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A2BB7EF15B9C153006AEA3B /* QTKYellowViewController.xib */; };
 		B709F64C15D54B9C00E7D073 /* QTKBlackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B709F64A15D54B9C00E7D073 /* QTKBlackViewController.m */; };
 		B709F64D15D54B9C00E7D073 /* QTKBlackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B709F64B15D54B9C00E7D073 /* QTKBlackViewController.xib */; };
+		B709F66015D57DDA00E7D073 /* QTKScrollBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B709F65E15D57DD900E7D073 /* QTKScrollBarViewController.m */; };
+		B709F66515D5805600E7D073 /* gym3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B709F66215D5805400E7D073 /* gym3.jpeg */; };
+		B709F66615D5805600E7D073 /* London-Olympics-2012-Youngest-Athletes-535x368.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B709F66315D5805500E7D073 /* London-Olympics-2012-Youngest-Athletes-535x368.jpeg */; };
+		B709F66715D5805600E7D073 /* gym1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B709F66415D5805500E7D073 /* gym1.jpeg */; };
+		B709F67F15D5958F00E7D073 /* image0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B709F67915D5958A00E7D073 /* image0.jpg */; };
+		B709F68015D5958F00E7D073 /* image1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B709F67A15D5958B00E7D073 /* image1.jpg */; };
+		B709F68115D5958F00E7D073 /* image2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B709F67B15D5958C00E7D073 /* image2.jpg */; };
+		B709F68215D5958F00E7D073 /* image3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B709F67C15D5958D00E7D073 /* image3.jpg */; };
+		B709F68315D5958F00E7D073 /* image4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B709F67D15D5958E00E7D073 /* image4.jpg */; };
+		B709F68415D5958F00E7D073 /* image5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B709F67E15D5958F00E7D073 /* image5.jpg */; };
+		B709F68615D5A8D300E7D073 /* QTKScrollBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B709F68515D5A8D300E7D073 /* QTKScrollBarViewController.xib */; };
 		FF464BF315C1CF08009A39A6 /* QTKSubTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF464BF115C1CF08009A39A6 /* QTKSubTabViewController.m */; };
 		FF464BF415C1CF08009A39A6 /* QTKSubTabViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF464BF215C1CF08009A39A6 /* QTKSubTabViewController.xib */; };
 /* End PBXBuildFile section */
@@ -53,6 +64,18 @@
 		B709F64915D54B9C00E7D073 /* QTKBlackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTKBlackViewController.h; sourceTree = "<group>"; };
 		B709F64A15D54B9C00E7D073 /* QTKBlackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTKBlackViewController.m; sourceTree = "<group>"; };
 		B709F64B15D54B9C00E7D073 /* QTKBlackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QTKBlackViewController.xib; sourceTree = "<group>"; };
+		B709F65D15D57DD900E7D073 /* QTKScrollBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTKScrollBarViewController.h; sourceTree = "<group>"; };
+		B709F65E15D57DD900E7D073 /* QTKScrollBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTKScrollBarViewController.m; sourceTree = "<group>"; };
+		B709F66215D5805400E7D073 /* gym3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gym3.jpeg; sourceTree = "<group>"; };
+		B709F66315D5805500E7D073 /* London-Olympics-2012-Youngest-Athletes-535x368.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "London-Olympics-2012-Youngest-Athletes-535x368.jpeg"; sourceTree = "<group>"; };
+		B709F66415D5805500E7D073 /* gym1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gym1.jpeg; sourceTree = "<group>"; };
+		B709F67915D5958A00E7D073 /* image0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image0.jpg; sourceTree = "<group>"; };
+		B709F67A15D5958B00E7D073 /* image1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image1.jpg; sourceTree = "<group>"; };
+		B709F67B15D5958C00E7D073 /* image2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image2.jpg; sourceTree = "<group>"; };
+		B709F67C15D5958D00E7D073 /* image3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image3.jpg; sourceTree = "<group>"; };
+		B709F67D15D5958E00E7D073 /* image4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image4.jpg; sourceTree = "<group>"; };
+		B709F67E15D5958F00E7D073 /* image5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image5.jpg; sourceTree = "<group>"; };
+		B709F68515D5A8D300E7D073 /* QTKScrollBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QTKScrollBarViewController.xib; sourceTree = "<group>"; };
 		FF464BF015C1CF08009A39A6 /* QTKSubTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTKSubTabViewController.h; sourceTree = "<group>"; };
 		FF464BF115C1CF08009A39A6 /* QTKSubTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTKSubTabViewController.m; sourceTree = "<group>"; };
 		FF464BF215C1CF08009A39A6 /* QTKSubTabViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QTKSubTabViewController.xib; sourceTree = "<group>"; };
@@ -103,6 +126,15 @@
 		0A2BB7C915B9C098006AEA3B /* TabPrototype */ = {
 			isa = PBXGroup;
 			children = (
+				B709F67915D5958A00E7D073 /* image0.jpg */,
+				B709F67A15D5958B00E7D073 /* image1.jpg */,
+				B709F67B15D5958C00E7D073 /* image2.jpg */,
+				B709F67C15D5958D00E7D073 /* image3.jpg */,
+				B709F67D15D5958E00E7D073 /* image4.jpg */,
+				B709F67E15D5958F00E7D073 /* image5.jpg */,
+				B709F66215D5805400E7D073 /* gym3.jpeg */,
+				B709F66315D5805500E7D073 /* London-Olympics-2012-Youngest-Athletes-535x368.jpeg */,
+				B709F66415D5805500E7D073 /* gym1.jpeg */,
 				FF464BEB15C1CEC6009A39A6 /* SubTab */,
 				0A2BB7D215B9C098006AEA3B /* QTKAppDelegate.h */,
 				0A2BB7D315B9C098006AEA3B /* QTKAppDelegate.m */,
@@ -143,6 +175,9 @@
 				FF464BF015C1CF08009A39A6 /* QTKSubTabViewController.h */,
 				FF464BF115C1CF08009A39A6 /* QTKSubTabViewController.m */,
 				FF464BF215C1CF08009A39A6 /* QTKSubTabViewController.xib */,
+				B709F65D15D57DD900E7D073 /* QTKScrollBarViewController.h */,
+				B709F65E15D57DD900E7D073 /* QTKScrollBarViewController.m */,
+				B709F68515D5A8D300E7D073 /* QTKScrollBarViewController.xib */,
 			);
 			name = SubTab;
 			sourceTree = "<group>";
@@ -206,6 +241,16 @@
 				0A2BB7F115B9C153006AEA3B /* QTKYellowViewController.xib in Resources */,
 				FF464BF415C1CF08009A39A6 /* QTKSubTabViewController.xib in Resources */,
 				B709F64D15D54B9C00E7D073 /* QTKBlackViewController.xib in Resources */,
+				B709F66515D5805600E7D073 /* gym3.jpeg in Resources */,
+				B709F66615D5805600E7D073 /* London-Olympics-2012-Youngest-Athletes-535x368.jpeg in Resources */,
+				B709F66715D5805600E7D073 /* gym1.jpeg in Resources */,
+				B709F67F15D5958F00E7D073 /* image0.jpg in Resources */,
+				B709F68015D5958F00E7D073 /* image1.jpg in Resources */,
+				B709F68115D5958F00E7D073 /* image2.jpg in Resources */,
+				B709F68215D5958F00E7D073 /* image3.jpg in Resources */,
+				B709F68315D5958F00E7D073 /* image4.jpg in Resources */,
+				B709F68415D5958F00E7D073 /* image5.jpg in Resources */,
+				B709F68615D5A8D300E7D073 /* QTKScrollBarViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +269,7 @@
 				0A2BB7F015B9C153006AEA3B /* QTKYellowViewController.m in Sources */,
 				FF464BF315C1CF08009A39A6 /* QTKSubTabViewController.m in Sources */,
 				B709F64C15D54B9C00E7D073 /* QTKBlackViewController.m in Sources */,
+				B709F66015D57DDA00E7D073 /* QTKScrollBarViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

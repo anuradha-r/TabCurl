@@ -13,4 +13,16 @@
 @property (strong, nonatomic) NSArray *topNavTabItems;
 @property (strong, nonatomic)NSMutableArray *topNavViewControllers;
 
+
+@property (weak, nonatomic) IBOutlet UIButton *btnSwim;
+@property (weak, nonatomic) IBOutlet UIButton *btnGym;
+@property (weak, nonatomic) IBOutlet UIButton *btnTrack;
+
+- (IBAction)btnSwimmingTapped:(id)sender;
+- (IBAction)btnGymTapped:(id)sender;
+- (IBAction)btnTracktapped:(id)sender;
+
+
+
+
 @end

@@ -19,9 +19,11 @@
 @property (weak, nonatomic) IBOutlet UIButton *blueButton;
 @property (weak, nonatomic) IBOutlet UIButton *yellowButton;
 @property (weak, nonatomic) IBOutlet UIButton *greenButton;
+@property (weak, nonatomic) IBOutlet UIButton *blackButton;
 
 - (IBAction)showBlue:(id)sender;
 - (IBAction)showYellow:(id)sender;
 - (IBAction)showGreen:(id)sender;
+- (IBAction)showBlack:(id)sender;
 
 @end

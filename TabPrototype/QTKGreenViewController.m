@@ -29,7 +29,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.webView.delegate = self;
-    NSURL *url = [[NSURL alloc] initWithString:@"http://www.invesco.dev.invesco.net/mobile/ipad/about-invesco.html"];
+    //NSURL *url = [[NSURL alloc] initWithString:@"http://www.invesco.dev.invesco.net/mobile/ipad/about-invesco.html"];
+    NSURL *url = [[NSURL alloc] initWithString:@"http://www.google.com"];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
     [self.webView loadRequest:request];    
     self.webView.scrollView.bounces = NO;
