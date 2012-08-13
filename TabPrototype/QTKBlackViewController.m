@@ -56,7 +56,7 @@
     self.selectedTopNavTabIndex = 0;
     [self.topNavContainerView addSubview:scrollViewController1.view];
     scrollViewController1.view.frame = self.topNavContainerView.bounds;
-    //self.topNavContainerView.clipsToBounds = YES;
+    self.topNavContainerView.clipsToBounds = YES;
     
 }
 

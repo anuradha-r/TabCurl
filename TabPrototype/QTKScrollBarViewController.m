@@ -12,11 +12,12 @@
 
 @end
 
-#define kNoOfSlidebarThumbnails 4
+#define kNoOfSlidebarThumbnails 9
 #define kThumbnailVerticalPadding 20
 #define kThumbnailHorizontalPadding 30
 
 @implementation QTKScrollBarViewController
+@synthesize slidebarThumbnailScrollView;
 @synthesize slidebarSegmentedControl;
 @synthesize slideBarNavView;
 @synthesize slideButton;
@@ -30,28 +31,38 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.scrollView.scrollEnabled = YES;
-    self.scrollView.indicatorStyle= UIScrollViewIndicatorStyleBlack;
-    [self.scrollView setCanCancelContentTouches:NO];
+    [self layoutScrollView];
     [self setupSlidebarSegmentedControl];
     [self layoutSlidebar];
     
-//    for (int i =0; i < 5; i++){
-//        NSString *imageName = [NSString stringWithFormat:@"image%d.jpg", i];
-//		UIImage *image = [UIImage imageNamed:imageName];
-//		UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-//        // setup each frame to a default height and width, it will be properly placed when we call "updateScrollList"
-//		CGRect rect = imageView.frame;
-//		rect.size.height = 150 ;
-//		rect.size.width = 200
-//        ;
-//		imageView.frame = rect;
-//		imageView.tag = i;	// tag our images for later use when we place them in serial fashion
-//		[self.scrollView addSubview:imageView];
-//    }
-    //[self layoutScrollImages];
     
+}
+
+
+- (void)layoutScrollView{
+    self.slideBarNavView.clipsToBounds = YES;
+    self.scrollView.scrollEnabled = YES;
+    self.scrollView.indicatorStyle= UIScrollViewIndicatorStyleBlack;
+    //[self.scrollView setCanCancelContentTouches:NO];
+    for (int i = 0; i < 7; i++){
+        NSString *imageName = [NSString stringWithFormat:@"image%d.jpg", i];
+		UIImage *image = [UIImage imageNamed:imageName];
+		UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+        // setup each frame to a default height and width, it will be properly placed when we call "updateScrollList"
+		CGRect rect = imageView.frame;
+		rect.size.height = self.scrollView.frame.size.height - 100;
+		rect.size.width = 250;
+		imageView.frame = rect;
+		imageView.tag = i;	// tag our images for later use when we place them in serial fashion
+		[self.scrollView addSubview:imageView];
+    }
+   
+    [self layoutScrollImages];
+
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    //[self.scrollView setContentOffset:CGPointMake(self.scrollView.contentOffset.x, 25)];    
 }
 
 - (void)layoutScrollImages
@@ -61,21 +72,21 @@
     
 	// reposition all image subviews in a horizontal serial fashion
 	CGFloat curXLoc = 0;
-	for (view in subviews)
+   	for (view in subviews)
 	{
-		if ([view isKindOfClass:[UIImageView class]] && view.tag > 0)
+		if ([view isKindOfClass:[UIImageView class]] && view.tag > 0 )
 		{
 			CGRect frame = view.frame;
 			frame.origin = CGPointMake(curXLoc, 0);
 			view.frame = frame;
 			
-			curXLoc += (150 + 25);
+			curXLoc = curXLoc + (250 + 25);
 		}
 	}
 	
 	// set the content size so it can be scrollable
-	[self.scrollView setContentSize:CGSizeMake((5 * 200), [self.scrollView bounds].size.height)];
-}
+	[self.scrollView setContentSize:CGSizeMake(2000, [self.scrollView bounds].size.height)];
+    }
 
 - (void)viewDidUnload
 {
@@ -83,6 +94,7 @@
     [self setSlidebarSegmentedControl:nil];
     [self setSlideBarNavView:nil];
     [self setSlideButton:nil];
+    [self setSlidebarThumbnailScrollView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -126,16 +138,36 @@
 }
 
 - (void)layoutSlidebar{
+//    for (int i =0; i < kNoOfSlidebarThumbnails; i++){
+//        UIImageView *thumbnail = [self slideBarThumbnail];
+//		thumbnail.tag = i;	
+//		[self.slidebarThumbnailScrollView addSubview:thumbnail];
+//    }
+//        
+    
+    
     CGPoint start = CGPointMake(15, 65);
     CGPoint currentPos = start;
-    for(int i = 0; i < kNoOfSlidebarThumbnails; i++){
+   
+    for(int i = 0; i < kNoOfSlidebarThumbnails; ){
         UIImageView *thumbnail = [self slideBarThumbnail];
         CGRect frame = thumbnail.frame;
         [thumbnail setFrame:CGRectMake(currentPos.x,currentPos.y,frame.size.width,frame.size.height)];
-        [self.slideBarNavView addSubview:thumbnail];
-        currentPos.x = currentPos.x + thumbnail.frame.size.width + kThumbnailHorizontalPadding;
+        [self.slidebarThumbnailScrollView addSubview:thumbnail];
+        i++;
+        if(i!=0 && i%4 == 0){
+            currentPos.x = start.x ;
+            currentPos.y = start.y + thumbnail.frame.size.height + kThumbnailVerticalPadding;
+        }else{
+          currentPos.x = currentPos.x + thumbnail.frame.size.width + kThumbnailHorizontalPadding;    
+        }
+        
         
     }
+    
+   
+
+    
 }
 
 @end

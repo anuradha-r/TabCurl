@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface QTKScrollBarViewController : UIViewController
+@interface QTKScrollBarViewController : UIViewController<UIScrollViewDelegate>
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @property (strong, nonatomic) NSArray *thumbNails;
@@ -17,5 +17,6 @@
 @property (strong, nonatomic) IBOutlet UIView *slideBarNavView;
 @property (weak, nonatomic) IBOutlet UIButton *slideButton;
 - (IBAction)slideButtonTapped:(id)sender;
+@property (weak, nonatomic) IBOutlet UIScrollView *slidebarThumbnailScrollView;
 
 @end
