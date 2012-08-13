@@ -7,23 +7,24 @@
 //
 
 #import "QTKScrollBarViewController.h"
+#import "QTKVerticalScrollViewController.h"
 
 @interface QTKScrollBarViewController ()
 
 @end
 
-#define kNoOfSlidebarThumbnails 9
-#define kThumbnailVerticalPadding 20
-#define kThumbnailHorizontalPadding 30
+
 
 @implementation QTKScrollBarViewController
-@synthesize slidebarThumbnailScrollView;
 @synthesize slidebarSegmentedControl;
 @synthesize slideBarNavView;
 @synthesize slideButton;
 @synthesize  slideBarTabs;
 @synthesize scrollView;
+@synthesize slideBarContentContainer;
 @synthesize thumbNails;
+@synthesize slideBarTabsViewControllers;
+@synthesize slideBarThumbnails;
 
 - (id)init{
     return [self initWithNibName:@"QTKScrollBarViewController" bundle:nil];
@@ -33,7 +34,7 @@
     [super viewDidLoad];
     [self layoutScrollView];
     [self setupSlidebarSegmentedControl];
-    [self layoutSlidebar];
+    //[self layoutSlidebar];
     
     
 }
@@ -94,7 +95,7 @@
     [self setSlidebarSegmentedControl:nil];
     [self setSlideBarNavView:nil];
     [self setSlideButton:nil];
-    [self setSlidebarThumbnailScrollView:nil];
+    [self setSlideBarContentContainer:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -111,8 +112,25 @@
     self.slidebarSegmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
     self.slidebarSegmentedControl.hidden = NO;
     [self.slidebarSegmentedControl setFrame:CGRectMake(325,11,350,30)];
+    [self.slidebarSegmentedControl addTarget:self action:@selector(slideBarTabsSelected:) forControlEvents:UIControlEventValueChanged];
     [self.slideBarNavView addSubview:self.slidebarSegmentedControl];
-    //[self.view addSubview:self.slideBarNavView];
+    
+    self.slideBarTabsViewControllers = [[NSMutableArray alloc]init];
+    for(int i = 0; i< [self.slideBarTabs count]; i++){
+        QTKVerticalScrollViewController *viewController = [[QTKVerticalScrollViewController alloc]init];
+        [self addChildViewController:viewController];
+        [self.slideBarTabsViewControllers addObject:viewController];
+    }
+}
+
+- (void)slideBarTabsSelected:(UISegmentedControl *)sender{
+    UIViewController *viewController = [self.slideBarTabsViewControllers objectAtIndex:sender.selectedSegmentIndex];
+    if(sender.selectedSegmentIndex == 0){
+        [viewController.view setBackgroundColor:[UIColor grayColor]];}
+    [self.slideBarContentContainer addSubview:viewController.view];
+    viewController.view.frame = self.slideBarContentContainer.bounds;
+   
+         
 }
 
 - (IBAction)slideButtonTapped:(id)sender {
@@ -131,43 +149,39 @@
     }
 }
 
-- (UIImageView *)slideBarThumbnail{
-    UIImageView *thumbnail = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 225, 100)];
-    [thumbnail setBackgroundColor:[UIColor greenColor]];
-    return thumbnail;
-}
 
-- (void)layoutSlidebar{
-//    for (int i =0; i < kNoOfSlidebarThumbnails; i++){
+
+//- (void)layoutSlidebar{
+////    for (int i =0; i < kNoOfSlidebarThumbnails; i++){
+////        UIImageView *thumbnail = [self slideBarThumbnail];
+////		thumbnail.tag = i;	
+////		[self.slidebarThumbnailScrollView addSubview:thumbnail];
+////    }
+////        
+//    
+//    
+//    CGPoint start = CGPointMake(15, 65);
+//    CGPoint currentPos = start;
+//   
+//    for(int i = 0; i < kNoOfSlidebarThumbnails; ){
 //        UIImageView *thumbnail = [self slideBarThumbnail];
-//		thumbnail.tag = i;	
-//		[self.slidebarThumbnailScrollView addSubview:thumbnail];
-//    }
+//        CGRect frame = thumbnail.frame;
+//        [thumbnail setFrame:CGRectMake(currentPos.x,currentPos.y,frame.size.width,frame.size.height)];
+//        [self.slideBarContentContainer addSubview:thumbnail];
+//        i++;
+//        if(i!=0 && i%4 == 0){
+//            currentPos.x = start.x ;
+//            currentPos.y = start.y + thumbnail.frame.size.height + kThumbnailVerticalPadding;
+//        }else{
+//          currentPos.x = currentPos.x + thumbnail.frame.size.width + kThumbnailHorizontalPadding;    
+//        }
 //        
-    
-    
-    CGPoint start = CGPointMake(15, 65);
-    CGPoint currentPos = start;
-   
-    for(int i = 0; i < kNoOfSlidebarThumbnails; ){
-        UIImageView *thumbnail = [self slideBarThumbnail];
-        CGRect frame = thumbnail.frame;
-        [thumbnail setFrame:CGRectMake(currentPos.x,currentPos.y,frame.size.width,frame.size.height)];
-        [self.slidebarThumbnailScrollView addSubview:thumbnail];
-        i++;
-        if(i!=0 && i%4 == 0){
-            currentPos.x = start.x ;
-            currentPos.y = start.y + thumbnail.frame.size.height + kThumbnailVerticalPadding;
-        }else{
-          currentPos.x = currentPos.x + thumbnail.frame.size.width + kThumbnailHorizontalPadding;    
-        }
-        
-        
-    }
-    
-   
-
-    
-}
+//        
+//    }
+//    
+//   
+//
+//    
+//}
 
 @end
