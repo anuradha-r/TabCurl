@@ -40,9 +40,9 @@
 }
 
 -(void)layoutThumbnails{
-    CGPoint start = CGPointMake(0, 65);
+    CGPoint start = CGPointMake(10, 25);
     CGPoint currentPos = start;
-    
+    int noOfRows = 0;
     for(int i = 0; i < kNoOfSlidebarThumbnails; ){
         UIImageView *thumbnail = [self slideBarThumbnail];
         CGRect frame = thumbnail.frame;
@@ -51,14 +51,16 @@
         i++;
         if(i!=0 && i%4 == 0){
             currentPos.x = start.x ;
-            currentPos.y = start.y + thumbnail.frame.size.height + kThumbnailVerticalPadding;
+            currentPos.y = start.y  + noOfRows * (100 + kThumbnailVerticalPadding )+ thumbnail.frame.size.height + kThumbnailVerticalPadding;
+            noOfRows ++;
         }else{
             currentPos.x = currentPos.x + thumbnail.frame.size.width + kThumbnailHorizontalPadding;    
         }
         
         
     }
-
+    CGFloat height = noOfRows * (100 + kThumbnailVerticalPadding) + 500;
+    [self.scrollView setContentSize:CGSizeMake(self.scrollView.frame.size.width, height )];
 }
 
 - (UIImageView *)slideBarThumbnail{

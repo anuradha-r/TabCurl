@@ -129,7 +129,8 @@
         [viewController.view setBackgroundColor:[UIColor grayColor]];}
     [self.slideBarContentContainer addSubview:viewController.view];
     viewController.view.frame = self.slideBarContentContainer.bounds;
-   
+    viewController.view.clipsToBounds = NO;
+    self.slideBarContentContainer.clipsToBounds = NO;
          
 }
 
