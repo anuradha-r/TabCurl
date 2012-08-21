@@ -35,8 +35,14 @@
     [self layoutScrollView];
     [self setupSlidebarSegmentedControl];
     //[self layoutSlidebar];
-    
-    
+}
+
+- (void)animateSlideBar{
+    [UIView animateWithDuration:0.5 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        CGRect frame = self.slideBarNavView.frame;
+        frame.origin.y = frame.origin.y - 200;
+        self.slideBarNavView.frame = frame;
+    } completion:nil];    
 }
 
 
@@ -124,6 +130,7 @@
 }
 
 - (void)slideBarTabsSelected:(UISegmentedControl *)sender{
+     [self animateSlideBar];
     UIViewController *viewController = [self.slideBarTabsViewControllers objectAtIndex:sender.selectedSegmentIndex];
     if(sender.selectedSegmentIndex == 0){
         [viewController.view setBackgroundColor:[UIColor grayColor]];}
