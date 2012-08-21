@@ -135,6 +135,19 @@
     self.slidebarSegmentedControl.hidden = NO;
     [self.slidebarSegmentedControl setFrame:CGRectMake(325,11,350,30)];
     [self.slidebarSegmentedControl addTarget:self action:@selector(slideBarTabsSelected:) forControlEvents:UIControlEventValueChanged];
+    [self.slidebarSegmentedControl setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Verdana" size:13.0],UITextAttributeFont, nil] forState:UIControlStateNormal];
+//    for(id segment in [self.slidebarSegmentedControl subviews]){
+//        for(id label in [segment subviews]){
+//            NSString *string = @"mountainous regions";
+//            CGSize size = [string sizeWithFont:[UIFont fontWithName:@"Verdana" size:13.0] constrainedToSize:CGSizeMake(200, 30)];
+//            [self.slidebarSegmentedControl setWidth:size.width forSegmentAtIndex:1];
+//            if([label isKindOfClass:[UILabel class]]){
+//                [label setFont:[UIFont fontWithName:@"Verdana" size:13.0]];
+//                //[label setTitle:@"Mountainous regions"];
+//            }
+//        }
+//    }
+    
     [self.slideBarNavView addSubview:self.slidebarSegmentedControl];
     
     self.slideBarTabsViewControllers = [[NSMutableArray alloc]init];
