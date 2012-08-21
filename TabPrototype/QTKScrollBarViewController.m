@@ -45,6 +45,21 @@
     } completion:nil];    
 }
 
+- (void)animateScrollViewImageAtIndex:(int)i{
+    __block int index = i;
+    [UIView animateWithDuration:0.1 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        UIImageView *thumbnail = [[self.scrollView subviews]objectAtIndex:index];
+        CGRect frame = thumbnail.frame;
+        frame.origin.x = frame.origin.x - 200;
+        thumbnail.frame = frame;
+        index ++;
+        if(index >= [[self.scrollView subviews]count]){
+            return;
+        }else{
+            [self animateScrollViewImageAtIndex:index];
+        }
+    } completion:nil];
+}
 
 - (void)layoutScrollView{
     self.slideBarNavView.clipsToBounds = YES;
@@ -57,6 +72,7 @@
 		UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
         // setup each frame to a default height and width, it will be properly placed when we call "updateScrollList"
 		CGRect rect = imageView.frame;
+        rect.origin.x = 200;
 		rect.size.height = self.scrollView.frame.size.height - 100;
 		rect.size.width = 250;
 		imageView.frame = rect;
@@ -130,7 +146,8 @@
 }
 
 - (void)slideBarTabsSelected:(UISegmentedControl *)sender{
-     [self animateSlideBar];
+    [self animateSlideBar];
+    [self animateScrollViewImageAtIndex:0];
     UIViewController *viewController = [self.slideBarTabsViewControllers objectAtIndex:sender.selectedSegmentIndex];
     if(sender.selectedSegmentIndex == 0){
         [viewController.view setBackgroundColor:[UIColor grayColor]];}
