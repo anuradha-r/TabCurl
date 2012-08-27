@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Crust</key>
+	<array>
+		<string>Hand Tossed</string>
+		<string>Napoletana Thin Crust</string>
+		<string>Chicago Deep Dish</string>
+		<string>Brooklyn Style</string>
+	</array>
+	<key>Size</key>
+	<dict>
+		<key>Brooklyn style</key>
+		<array>
+			<string>large</string>
+			<string>x-large</string>
+		</array>
+		<key>Chicago Deep Dish</key>
+		<array>
+			<string>medium</string>
+			<string>large</string>
+		</array>
+		<key>Hand Tossed</key>
+		<array>
+			<string>Small</string>
+			<string>Medium</string>
+			<string>large</string>
+		</array>
+		<key>Napoletana Thin crust</key>
+		<array>
+			<string>medium</string>
+			<string>large</string>
+		</array>
+	</dict>
+	<key>Sauce</key>
+	<array>
+		<string>White Sauce</string>
+		<string>Red Sauce</string>
+	</array>
+</dict>
+</plist>
