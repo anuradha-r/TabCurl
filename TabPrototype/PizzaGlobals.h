@@ -10,3 +10,7 @@
 #define kSize @"size"
 #define kSauce @"sauce"
 #define kToppings @"toppings"
+
+
+#define kPizzaIngredientChosenNotification @"Pizza Ingredient chosen"
+#define kPizzaIngredientChosenNotificationUserInfoKey @"Pizza Ingredient chosen key"

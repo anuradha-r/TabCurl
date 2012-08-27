@@ -10,5 +10,10 @@
 
 @interface QTKPizzaBuilder : NSObject
 
+@property (nonatomic, readonly) NSInteger finalPizzaBuildingStep;
+@property (nonatomic, readonly) NSArray *pizzaCrusts;
 @property (nonatomic, readonly) NSArray *pizzaIngredientsOrder;
+ 
++ (id)sharedPizzaBuilder;
+- (NSArray *)pizzaTypesByCategory:(NSString *)category;
 @end

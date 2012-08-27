@@ -7,6 +7,8 @@
 //
 
 #import "QTKPizzaViewController.h"
+#import "QTKPizzaBuilder.h"
+#import "QTKListViewController.h"
 
 @interface QTKPizzaViewController ()
 
@@ -14,9 +16,11 @@
 
 @implementation QTKPizzaViewController
 
+@synthesize currentPizzaBuildingStep = _currentPizzaBuildingStep;
 @synthesize ingredientDetailView;
 @synthesize chosenIngredientsListView;
 @synthesize containerView;
+
 
 - (id)init{
     return [self initWithNibName:@"QTKPizzaViewController" bundle:nil];
@@ -24,6 +28,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupChildViews];
+    [self showFirstCategoryOptions];
+    
 }
 
 - (void)viewDidUnload {
@@ -39,4 +46,22 @@
 	return YES;
 }
 
+- (void)setupChildViews{
+    QTKListViewController *listViewController = [[QTKListViewController alloc]init];
+    [self addChildViewController:listViewController];
+    self.chosenIngredientsListView = listViewController.view;
+    listViewController.view.frame = self.chosenIngredientsListView.bounds;
+    listViewController.view.clipsToBounds = YES;
+}
+
+#pragma mark - Notifications
+
+- (void)showFirstCategoryOptions{
+    self.currentPizzaBuildingStep = 0;
+    NSString *category = [[[QTKPizzaBuilder sharedPizzaBuilder] pizzaIngredientsOrder] objectAtIndex:0];
+    NSArray *categoryInfo = [[QTKPizzaBuilder sharedPizzaBuilder] pizzaTypesByCategory:category];
+   //NSDictionary *
+    [[NSNotificationCenter defaultCenter]postNotificationName:kPizzaIngredientChosenNotification object:nil 
+                                                     userInfo:[NSDictionary dictionaryWithObject:categoryInfo forKey:kPizzaIngredientChosenNotificationUserInfoKey]];
+}
 @end

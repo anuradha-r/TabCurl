@@ -10,8 +10,8 @@
 
 @implementation QTKPizza
 
-@synthesize crust = _crust;
-@synthesize sauce = _sauce;
+@synthesize crustTitle = _crustTitle;
+@synthesize crustDesc, sauceDesc, sauceTitle, sizeDesc, sizeTitle;
 @synthesize toppings = _toppings;
-@synthesize size = _size;
+
 @end

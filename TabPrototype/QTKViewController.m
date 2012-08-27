@@ -11,6 +11,7 @@
 #import "QTKBlueViewController.h"
 #import "QTKGreenViewController.h"
 #import "QTKBlackViewController.h"
+#import "QTKPizzaViewController.h"
 
 @interface QTKViewController ()
 @end
@@ -33,7 +34,8 @@
     QTKYellowViewController *yellow = [[QTKYellowViewController alloc] initWithNibName:@"QTKYellowViewController" bundle:nil];
     QTKGreenViewController *green = [[QTKGreenViewController alloc] initWithNibName:@"QTKGreenViewController" bundle:nil];
     QTKBlackViewController *black = [[QTKBlackViewController alloc]init];
-    self.viewControllers = [NSArray arrayWithObjects:blueNav, yellow, green,black, nil];
+    QTKPizzaViewController *pizza = [[QTKPizzaViewController alloc]init];
+    self.viewControllers = [NSArray arrayWithObjects:blueNav, yellow, green,black,pizza, nil];
     
     NSDictionary *options = [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:UIPageViewControllerSpineLocationMin] forKey:UIPageViewControllerOptionSpineLocationKey];
     self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationVertical options:options];

@@ -2,12 +2,28 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Crust</key>
+	<key>crust</key>
 	<array>
-		<string>Hand Tossed</string>
-		<string>Napoletana Thin Crust</string>
-		<string>Chicago Deep Dish</string>
-		<string>Brooklyn Style</string>
+		<dict>
+			<key>title</key>
+			<string>Hand Tossed</string>
+			<key>sub text</key>
+			<string>Hand tossed pizza</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Napoletana Thin Crust</string>
+			<key>sub text</key>
+			<string>Italy &apos;s famous thin crust</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Chicago Deep Dish</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Brooklyn Style</string>
+		</dict>
 	</array>
 	<key>Size</key>
 	<dict>
