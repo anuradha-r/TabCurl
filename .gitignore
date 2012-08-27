@@ -39,3 +39,4 @@ Thumbs.db
 xcuserdata
 *.pbxuser
 *.xcodeproj/!*.xcodeproj/project.pbxproj
+*.xcodeproj/project.xcworkspace/xcuserdata/*.xcuserdatad/UserInterfaceState.xcuserstate

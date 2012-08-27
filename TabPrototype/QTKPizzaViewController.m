@@ -6,16 +6,16 @@
 //  Copyright (c) 2012 Q Technology Company. All rights reserved.
 //
 
-#import "QTKPizzaViewControllerViewController.h"
+#import "QTKPizzaViewController.h"
 
-@interface QTKPizzaViewControllerViewController ()
+@interface QTKPizzaViewController ()
 
 @end
 
-@implementation QTKPizzaViewControllerViewController
+@implementation QTKPizzaViewController
 
-@synthesize detailView;
-@synthesize navigationView;
+@synthesize ingredientDetailView;
+@synthesize chosenIngredientsListView;
 @synthesize containerView;
 
 - (id)init{
@@ -27,9 +27,9 @@
 }
 
 - (void)viewDidUnload {
-    [self setDetailView:nil];
-    [self setNavigationView:nil];
+    [self setIngredientDetailView:nil];
     [self setContainerView:nil];
+    [self setChosenIngredientsListView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

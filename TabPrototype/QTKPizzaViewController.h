@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface QTKPizzaViewControllerViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIView *detailView;
-@property (weak, nonatomic) IBOutlet UIView *navigationView;
+@interface QTKPizzaViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIView *ingredientDetailView;
+@property (weak, nonatomic) IBOutlet UIView *chosenIngredientsListView;
 @property (strong, nonatomic) IBOutlet UIView *containerView;
 
 @end
