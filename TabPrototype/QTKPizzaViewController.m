@@ -9,18 +9,22 @@
 #import "QTKPizzaViewController.h"
 #import "QTKPizzaBuilder.h"
 #import "QTKListViewController.h"
+#import "QTKPizza.h"
 
-@interface QTKPizzaViewController ()
+@interface QTKPizzaViewController (){
+    QTKListViewController *listViewController;
+}
 
+@property (nonatomic, assign) NSInteger totalNumberOfIngredients;
 @end
 
 @implementation QTKPizzaViewController
 
-@synthesize currentPizzaBuildingStep = _currentPizzaBuildingStep;
-@synthesize ingredientDetailView;
-@synthesize chosenIngredientsListView;
-@synthesize containerView;
-
+//@synthesize currentPizzaBuildingStep = _currentPizzaBuildingStep;
+@synthesize ingredientDetailView = _ingredientDetailView;
+@synthesize chosenIngredientsListView = _chosenIngredientsListView;
+@synthesize numberOfIngredientsChosen;
+@synthesize totalNumberOfIngredients = _totalNumberOfIngredients;
 
 - (id)init{
     return [self initWithNibName:@"QTKPizzaViewController" bundle:nil];
@@ -29,14 +33,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupChildViews];
-    [self showFirstCategoryOptions];
-    
+    self.totalNumberOfIngredients = [[QTKPizzaBuilder sharedPizzaBuilder]numberOfpizzaIngredients];
+    self.numberOfIngredientsChosen = 0;
 }
 
 - (void)viewDidUnload {
     [self setIngredientDetailView:nil];
-    [self setContainerView:nil];
-    [self setChosenIngredientsListView:nil];
+     [self setChosenIngredientsListView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -47,21 +50,46 @@
 }
 
 - (void)setupChildViews{
-    QTKListViewController *listViewController = [[QTKListViewController alloc]init];
+    
+    NSArray *ingredientCategories = [NSArray arrayWithArray:[[QTKPizzaBuilder sharedPizzaBuilder] pizzaIngredientsOrder]];
+    NSMutableArray *leftChildDisplayData = [[NSMutableArray alloc]init];
+    for(NSString *category in ingredientCategories){
+        QTKPizza *pizza = [[QTKPizza alloc]init];
+        pizza.category = category;
+        pizza.chosenCategoryTitle = [NSString stringWithFormat:@"Please choose a %@", category];
+        [leftChildDisplayData addObject:pizza];
+    }
+    [self setupLeftChildViewWithData:leftChildDisplayData];
+}
+
+- (void)setupLeftChildViewWithData:(NSArray *)data{
+     listViewController= [[QTKListViewController alloc]initWithPizzaInfo:data];
     [self addChildViewController:listViewController];
-    self.chosenIngredientsListView = listViewController.view;
+    //[listViewController didMoveToParentViewController:self];
+    [self.chosenIngredientsListView setBackgroundColor:[UIColor cyanColor]];
+    [self.chosenIngredientsListView addSubview: listViewController.view];
     listViewController.view.frame = self.chosenIngredientsListView.bounds;
-    listViewController.view.clipsToBounds = YES;
+    listViewController.view.clipsToBounds = NO;
+    
 }
 
 #pragma mark - Notifications
 
-- (void)showFirstCategoryOptions{
-    self.currentPizzaBuildingStep = 0;
-    NSString *category = [[[QTKPizzaBuilder sharedPizzaBuilder] pizzaIngredientsOrder] objectAtIndex:0];
-    NSArray *categoryInfo = [[QTKPizzaBuilder sharedPizzaBuilder] pizzaTypesByCategory:category];
-   //NSDictionary *
-    [[NSNotificationCenter defaultCenter]postNotificationName:kPizzaIngredientChosenNotification object:nil 
-                                                     userInfo:[NSDictionary dictionaryWithObject:categoryInfo forKey:kPizzaIngredientChosenNotificationUserInfoKey]];
-}
+//- (void)showFirstCategoryOptions{
+//    self.currentPizzaBuildingStep = 0;
+//    NSString *category = [[[QTKPizzaBuilder sharedPizzaBuilder] pizzaIngredientsOrder] objectAtIndex:0];
+//    NSArray *categoryInfo = [[QTKPizzaBuilder sharedPizzaBuilder] pizzaTypesByCategory:category];
+//    
+//    QTKPizza *pizza = [[QTKPizza alloc]init];
+//    pizza.category = category;
+//    pizza.chosenCategoryTitle = @"";
+//    pizza.chosenCategoryDesc = @"";
+//    
+//    NSArray *leftChildData = [NSArray arrayWithObject:pizza];
+//   //NSDictionary *
+//    [[NSNotificationCenter defaultCenter]postNotificationName:kLeftChildDataChangedNotification 
+//                                                       object:nil 
+//                                                     userInfo:[NSDictionary dictionaryWithObject:leftChildData forKey:kLeftChildDataChangedNotificationUserInfoKey]
+//     ];
+//}
 @end

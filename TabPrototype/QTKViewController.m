@@ -39,6 +39,7 @@
     
     NSDictionary *options = [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:UIPageViewControllerSpineLocationMin] forKey:UIPageViewControllerOptionSpineLocationKey];
     self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationVertical options:options];
+    [self addChildViewController:self.pageViewController];
     [self.pageViewContainer addSubview:self.pageViewController.view];
     self.pageViewController.view.frame = self.pageViewContainer.frame;
     self.pageViewContainer.clipsToBounds = YES;
@@ -129,7 +130,7 @@
     self.yellowButton.selected = NO;
     self.pizzaButton.selected = YES;
     [self.pageViewController setViewControllers:[NSArray arrayWithObject:[self.viewControllers objectAtIndex:4]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:^(BOOL finished) {
-        NSLog(@"black was shown");
+        NSLog(@"pizza was shown");
         self.selectedIndex = 4;
     }];
 }

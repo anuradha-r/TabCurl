@@ -10,9 +10,10 @@
 
 @interface QTKPizza : NSObject
 
-@property (nonatomic, strong) NSString *crustTitle, *crustDesc;
-@property (nonatomic, strong) NSString *sizeTitle, *sizeDesc;
-@property (nonatomic, strong) NSString *sauceTitle, *sauceDesc;
-@property (nonatomic, strong) NSArray  *toppings;
+@property (nonatomic, strong) NSString *category, *chosenCategoryTitle, *chosenCategoryDesc;
+//@property (nonatomic, strong) NSString *crustTitle, *crustDesc;
+//@property (nonatomic, strong) NSString *sizeTitle, *sizeDesc;
+//@property (nonatomic, strong) NSString *sauceTitle, *sauceDesc;
+//@property (nonatomic, strong) NSArray  *toppings;
 
 @end

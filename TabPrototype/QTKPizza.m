@@ -10,8 +10,11 @@
 
 @implementation QTKPizza
 
-@synthesize crustTitle = _crustTitle;
-@synthesize crustDesc, sauceDesc, sauceTitle, sizeDesc, sizeTitle;
-@synthesize toppings = _toppings;
+@synthesize category = _category;
+@synthesize chosenCategoryTitle = _chosenCategoryTitle;
+@synthesize chosenCategoryDesc = _chosenCategoryDesc;
+//@synthesize crustTitle = _crustTitle;
+//@synthesize crustDesc, sauceDesc, sauceTitle, sizeDesc, sizeTitle;
+//@synthesize toppings = _toppings;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "QTKListViewController.h"
+#import "QTKPizza.h"
 
 @interface QTKListViewController ()
 
@@ -14,24 +15,33 @@
 
 @implementation QTKListViewController
 
+@synthesize pizzaInfo = _pizzaInfo;
+@synthesize pizzaInfoTable = _pizzaInfoTable;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+
+- (id)initWithPizzaInfo:(NSArray *)pizzaInfo{
+    
+    self = [self init];
+    if(self){
+    _pizzaInfo = [NSArray arrayWithArray:pizzaInfo];
     }
     return self;
+}
+
+- (id)init{
+    return [self initWithNibName:@"QTKListViewController" bundle:nil];    
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [self.pizzaInfoTable reloadData];
+    [self setupNotifications];
 }
 
 - (void)viewDidUnload
 {
+    [self setPizzaInfoTable:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -42,4 +52,35 @@
 	return YES;
 }
 
+- (void)setupNotifications{
+
+}
+
+
+#pragma mark - Table View
+- (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView{
+    return [self.pizzaInfo count];
+}
+
+- (NSInteger)tableView:(UITableView *) tableView numberOfRowsInSection:(NSInteger)section{
+    return 1;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    QTKPizza *pizza = [self.pizzaInfo objectAtIndex:section];
+    NSString *title = pizza.category;
+    return title;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSString *identifier = @"cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if(!cell){
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
+    QTKPizza *pizza = [self.pizzaInfo objectAtIndex:indexPath.section];
+    cell.textLabel.text = pizza.chosenCategoryTitle;
+    cell.detailTextLabel.text = pizza.chosenCategoryDesc;
+    return cell;
+}
 @end

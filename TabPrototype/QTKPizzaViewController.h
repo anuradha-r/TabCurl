@@ -11,6 +11,8 @@
 @interface QTKPizzaViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIView *ingredientDetailView;
 @property (weak, nonatomic) IBOutlet UIView *chosenIngredientsListView;
-@property (strong, nonatomic) IBOutlet UIView *containerView;
-@property (nonatomic, assign) NSInteger currentPizzaBuildingStep;
+@property (nonatomic, assign) NSInteger numberOfIngredientsChosen;
+
+
+
 @end

@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface QTKListViewController : UITableViewController<UITableViewDataSource, UITableViewDelegate>
+@interface QTKListViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) NSArray *pizzaInfo;
+@property (weak, nonatomic) IBOutlet UITableView *pizzaInfoTable;
 
+- (id)initWithPizzaInfo:(NSArray *)pizzaInfo;
 @end

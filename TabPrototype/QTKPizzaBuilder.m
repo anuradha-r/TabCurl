@@ -34,6 +34,9 @@
     return order;
 }
 
+- (int)numberOfpizzaIngredients{
+    return 3;
+}
 - (NSDictionary *)pizzaBuilder{
     NSString *path = [[NSBundle mainBundle] pathForResource:@"Pizza" ofType:@"plist"];
     NSDictionary *pizzaInfo = [NSDictionary dictionaryWithContentsOfFile:path];

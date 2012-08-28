@@ -16,4 +16,5 @@
  
 + (id)sharedPizzaBuilder;
 - (NSArray *)pizzaTypesByCategory:(NSString *)category;
+- (int)numberOfpizzaIngredients;
 @end

@@ -40,3 +40,4 @@ xcuserdata
 *.pbxuser
 *.xcodeproj/!*.xcodeproj/project.pbxproj
 *.xcodeproj/project.xcworkspace/xcuserdata/*.xcuserdatad/UserInterfaceState.xcuserstate
+xcuserdata

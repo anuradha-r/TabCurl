@@ -14,3 +14,8 @@
 
 #define kPizzaIngredientChosenNotification @"Pizza Ingredient chosen"
 #define kPizzaIngredientChosenNotificationUserInfoKey @"Pizza Ingredient chosen key"
+
+#define kLeftChildDataChangedNotification @"left child show data"
+#define kLeftChildDataChangedNotificationUserInfoKey @"left chaild data key"
+
+#define kRightChildDataChangedNotification @"right child show data"

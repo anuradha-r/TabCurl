@@ -37,12 +37,13 @@
 		B709F6A415D98E9100E7D073 /* QTKVerticalScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B709F6A215D98E9000E7D073 /* QTKVerticalScrollViewController.m */; };
 		B709F6A515D98E9100E7D073 /* QTKVerticalScrollViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B709F6A315D98E9100E7D073 /* QTKVerticalScrollViewController.xib */; };
 		B78D542D15EBECD500F8EFE4 /* QTKPizzaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B78D542B15EBECD500F8EFE4 /* QTKPizzaViewController.m */; };
-		B78D542E15EBECD500F8EFE4 /* QTKPizzaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B78D542C15EBECD500F8EFE4 /* QTKPizzaViewController.xib */; };
 		B78D543115EBF1A800F8EFE4 /* Pizza.plist in Resources */ = {isa = PBXBuildFile; fileRef = B78D543015EBF1A800F8EFE4 /* Pizza.plist */; };
 		B78D543515EBF9A700F8EFE4 /* QTKPizzaBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = B78D543415EBF9A700F8EFE4 /* QTKPizzaBuilder.m */; };
 		B78D543815EBFA5900F8EFE4 /* QTKPizza.m in Sources */ = {isa = PBXBuildFile; fileRef = B78D543715EBFA5900F8EFE4 /* QTKPizza.m */; };
 		B78D543D15EC049000F8EFE4 /* QTKListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B78D543B15EC048F00F8EFE4 /* QTKListViewController.m */; };
 		B78D544115EC357C00F8EFE4 /* QTKPizzaCategoryInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B78D544015EC357C00F8EFE4 /* QTKPizzaCategoryInfo.m */; };
+		B78D544815ED33BE00F8EFE4 /* QTKListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B78D544715ED33BE00F8EFE4 /* QTKListViewController.xib */; };
+		B7D4598115ED4AA700006B61 /* QTKPizzaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D4598015ED4AA700006B61 /* QTKPizzaViewController.xib */; };
 		FF464BF315C1CF08009A39A6 /* QTKSubTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF464BF115C1CF08009A39A6 /* QTKSubTabViewController.m */; };
 		FF464BF415C1CF08009A39A6 /* QTKSubTabViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF464BF215C1CF08009A39A6 /* QTKSubTabViewController.xib */; };
 /* End PBXBuildFile section */
@@ -90,7 +91,6 @@
 		B709F6A315D98E9100E7D073 /* QTKVerticalScrollViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QTKVerticalScrollViewController.xib; sourceTree = "<group>"; };
 		B78D542A15EBECD500F8EFE4 /* QTKPizzaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTKPizzaViewController.h; sourceTree = "<group>"; };
 		B78D542B15EBECD500F8EFE4 /* QTKPizzaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTKPizzaViewController.m; sourceTree = "<group>"; };
-		B78D542C15EBECD500F8EFE4 /* QTKPizzaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QTKPizzaViewController.xib; sourceTree = "<group>"; };
 		B78D543015EBF1A800F8EFE4 /* Pizza.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Pizza.plist; sourceTree = "<group>"; };
 		B78D543315EBF9A700F8EFE4 /* QTKPizzaBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTKPizzaBuilder.h; sourceTree = "<group>"; };
 		B78D543415EBF9A700F8EFE4 /* QTKPizzaBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTKPizzaBuilder.m; sourceTree = "<group>"; };
@@ -101,6 +101,8 @@
 		B78D543B15EC048F00F8EFE4 /* QTKListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTKListViewController.m; sourceTree = "<group>"; };
 		B78D543F15EC357C00F8EFE4 /* QTKPizzaCategoryInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTKPizzaCategoryInfo.h; sourceTree = "<group>"; };
 		B78D544015EC357C00F8EFE4 /* QTKPizzaCategoryInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTKPizzaCategoryInfo.m; sourceTree = "<group>"; };
+		B78D544715ED33BE00F8EFE4 /* QTKListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QTKListViewController.xib; sourceTree = "<group>"; };
+		B7D4598015ED4AA700006B61 /* QTKPizzaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QTKPizzaViewController.xib; sourceTree = "<group>"; };
 		FF464BF015C1CF08009A39A6 /* QTKSubTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTKSubTabViewController.h; sourceTree = "<group>"; };
 		FF464BF115C1CF08009A39A6 /* QTKSubTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTKSubTabViewController.m; sourceTree = "<group>"; };
 		FF464BF215C1CF08009A39A6 /* QTKSubTabViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QTKSubTabViewController.xib; sourceTree = "<group>"; };
@@ -198,9 +200,9 @@
 		B78D543215EBF95300F8EFE4 /* Pizza */ = {
 			isa = PBXGroup;
 			children = (
+				B7D4598015ED4AA700006B61 /* QTKPizzaViewController.xib */,
 				B78D542A15EBECD500F8EFE4 /* QTKPizzaViewController.h */,
 				B78D542B15EBECD500F8EFE4 /* QTKPizzaViewController.m */,
-				B78D542C15EBECD500F8EFE4 /* QTKPizzaViewController.xib */,
 				B78D543015EBF1A800F8EFE4 /* Pizza.plist */,
 				B78D543315EBF9A700F8EFE4 /* QTKPizzaBuilder.h */,
 				B78D543415EBF9A700F8EFE4 /* QTKPizzaBuilder.m */,
@@ -209,6 +211,7 @@
 				B78D543915EC003300F8EFE4 /* PizzaGlobals.h */,
 				B78D543A15EC048F00F8EFE4 /* QTKListViewController.h */,
 				B78D543B15EC048F00F8EFE4 /* QTKListViewController.m */,
+				B78D544715ED33BE00F8EFE4 /* QTKListViewController.xib */,
 				B78D543F15EC357C00F8EFE4 /* QTKPizzaCategoryInfo.h */,
 				B78D544015EC357C00F8EFE4 /* QTKPizzaCategoryInfo.m */,
 			);
@@ -301,8 +304,9 @@
 				B709F68415D5958F00E7D073 /* image5.jpg in Resources */,
 				B709F68615D5A8D300E7D073 /* QTKScrollBarViewController.xib in Resources */,
 				B709F6A515D98E9100E7D073 /* QTKVerticalScrollViewController.xib in Resources */,
-				B78D542E15EBECD500F8EFE4 /* QTKPizzaViewController.xib in Resources */,
 				B78D543115EBF1A800F8EFE4 /* Pizza.plist in Resources */,
+				B78D544815ED33BE00F8EFE4 /* QTKListViewController.xib in Resources */,
+				B7D4598115ED4AA700006B61 /* QTKPizzaViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
