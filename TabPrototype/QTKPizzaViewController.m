@@ -10,9 +10,11 @@
 #import "QTKPizzaBuilder.h"
 #import "QTKListViewController.h"
 #import "QTKPizza.h"
+#import "QTKRightChildViewController.h"
 
 @interface QTKPizzaViewController (){
     QTKListViewController *listViewController;
+    QTKRightChildViewController *rightChildViewController;
 }
 
 @property (nonatomic, assign) NSInteger totalNumberOfIngredients;
@@ -60,6 +62,9 @@
         [leftChildDisplayData addObject:pizza];
     }
     [self setupLeftChildViewWithData:leftChildDisplayData];
+    NSString *currentCategory = [ingredientCategories objectAtIndex: self.numberOfIngredientsChosen];
+    NSArray *pizzaTypesForCurrentCategory = [[QTKPizzaBuilder sharedPizzaBuilder]pizzaTypesByCategory:currentCategory];
+    [self setupRightChildViewWithCategory:currentCategory data:pizzaTypesForCurrentCategory];
 }
 
 - (void)setupLeftChildViewWithData:(NSArray *)data{
@@ -69,8 +74,16 @@
     [self.chosenIngredientsListView setBackgroundColor:[UIColor cyanColor]];
     [self.chosenIngredientsListView addSubview: listViewController.view];
     listViewController.view.frame = self.chosenIngredientsListView.bounds;
-    listViewController.view.clipsToBounds = NO;
+    listViewController.view.clipsToBounds = YES;
     
+}
+
+- (void)setupRightChildViewWithCategory:(NSString *)category data:(NSArray *)data{
+    rightChildViewController = [[QTKRightChildViewController alloc]initWithData:data title:category];
+    [self addChildViewController:rightChildViewController];
+    [self.ingredientDetailView addSubview:rightChildViewController.view];
+    rightChildViewController.view.frame = self.ingredientDetailView.bounds;
+    rightChildViewController.view.clipsToBounds = YES;
 }
 
 #pragma mark - Notifications
