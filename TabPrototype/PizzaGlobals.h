@@ -18,4 +18,12 @@
 #define kLeftChildDataChangedNotification @"left child show data"
 #define kLeftChildDataChangedNotificationUserInfoKey @"left chaild data key"
 
-#define kRightChildDataChangedNotification @"right child show data"
+static NSString * const kRightChildDataChangedNotificationCategoryKey =  @"category";
+static NSString * const kRightChildDataChangedNotificationSelectionKey = @"selection";
+
+#define kRightChildDataChangedNotification  @"right child changed"
+#define kRightChildDataChangedNotificationUserInfoKey @"right child changed user info"
+
+
+#define kLeftChildCategorySelectedNotification @"left child category selected"
+#define kLeftChildCategorySelectedNotificationUserInfoKey @"left child category selected data key"

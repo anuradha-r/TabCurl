@@ -13,6 +13,7 @@
 @synthesize category = _category;
 @synthesize chosenCategoryTitle = _chosenCategoryTitle;
 @synthesize chosenCategoryDesc = _chosenCategoryDesc;
+@synthesize show = _show;
 //@synthesize crustTitle = _crustTitle;
 //@synthesize crustDesc, sauceDesc, sauceTitle, sizeDesc, sizeTitle;
 //@synthesize toppings = _toppings;

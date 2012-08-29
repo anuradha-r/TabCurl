@@ -15,6 +15,8 @@
 @interface QTKPizzaViewController (){
     QTKListViewController *listViewController;
     QTKRightChildViewController *rightChildViewController;
+    NSMutableArray *leftChildDisplayData;
+    NSMutableArray *rightChildDisplayData;
 }
 
 @property (nonatomic, assign) NSInteger totalNumberOfIngredients;
@@ -34,6 +36,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupNotifications];
     [self setupChildViews];
     self.totalNumberOfIngredients = [[QTKPizzaBuilder sharedPizzaBuilder]numberOfpizzaIngredients];
     self.numberOfIngredientsChosen = 0;
@@ -51,20 +54,30 @@
 	return YES;
 }
 
+- (void)setupNotifications{
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(leftChildSelectionChanged:) 
+                                                 name:kLeftChildCategorySelectedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(rightChildSelectionChanged:) 
+                                                 name:kRightChildDataChangedNotification object:nil];
+}
+
 - (void)setupChildViews{
-    
     NSArray *ingredientCategories = [NSArray arrayWithArray:[[QTKPizzaBuilder sharedPizzaBuilder] pizzaIngredientsOrder]];
-    NSMutableArray *leftChildDisplayData = [[NSMutableArray alloc]init];
+    leftChildDisplayData = [[NSMutableArray alloc]init];
+    BOOL showCategory = YES;
     for(NSString *category in ingredientCategories){
         QTKPizza *pizza = [[QTKPizza alloc]init];
         pizza.category = category;
-        pizza.chosenCategoryTitle = [NSString stringWithFormat:@"Please choose a %@", category];
+        pizza.show = showCategory;
+        showCategory = NO;
         [leftChildDisplayData addObject:pizza];
     }
     [self setupLeftChildViewWithData:leftChildDisplayData];
     NSString *currentCategory = [ingredientCategories objectAtIndex: self.numberOfIngredientsChosen];
-    NSArray *pizzaTypesForCurrentCategory = [[QTKPizzaBuilder sharedPizzaBuilder]pizzaTypesByCategory:currentCategory];
-    [self setupRightChildViewWithCategory:currentCategory data:pizzaTypesForCurrentCategory];
+    rightChildDisplayData = [NSMutableArray arrayWithArray:[[QTKPizzaBuilder sharedPizzaBuilder]pizzaTypesByCategory:currentCategory]];
+    [self setupRightChildViewWithCategory:currentCategory data:rightChildDisplayData];
 }
 
 - (void)setupLeftChildViewWithData:(NSArray *)data{
@@ -105,4 +118,26 @@
 //                                                     userInfo:[NSDictionary dictionaryWithObject:leftChildData forKey:kLeftChildDataChangedNotificationUserInfoKey]
 //     ];
 //}
+- (void)leftChildSelectionChanged:(NSNotification *)notification{
+
+}
+
+- (void)rightChildSelectionChanged:(NSNotification *)notification{
+    NSDictionary *userInfo = [notification userInfo]; 
+    NSString *category = [userInfo objectForKey:kRightChildDataChangedNotificationCategoryKey];
+    NSString *selection = [userInfo objectForKey:kRightChildDataChangedNotificationSelectionKey];
+    [self updateLeftChildViewCategory:category withSelection:selection];
+    for(QTKPizza *pizza in leftChildDisplayData){
+        if([pizza.category isEqualToString:category]){
+            pizza.chosenCategoryTitle = selection;
+            break;
+            //[leftChildDisplayData replaceObjectWith
+        }
+    }
+}
+
+- (void)updateLeftChildViewCategory:(NSString *)category withSelection:(NSString *)selection{
+    
+}
+
 @end

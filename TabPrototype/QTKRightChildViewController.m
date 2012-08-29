@@ -73,4 +73,13 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSString *selection = [[self.tableData objectAtIndex:indexPath.row] objectForKey:@"title"];
+    NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:self.categoryTitle, kRightChildDataChangedNotificationCategoryKey,selection, kRightChildDataChangedNotificationSelectionKey,nil];
+    [[NSNotificationCenter defaultCenter]postNotificationName:kRightChildDataChangedNotification 
+                                                       object:nil 
+                                                     userInfo:userInfo
+     ];
+}
+
 @end

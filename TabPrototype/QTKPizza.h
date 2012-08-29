@@ -11,6 +11,7 @@
 @interface QTKPizza : NSObject
 
 @property (nonatomic, strong) NSString *category, *chosenCategoryTitle, *chosenCategoryDesc;
+@property (nonatomic, assign) BOOL show;
 //@property (nonatomic, strong) NSString *crustTitle, *crustDesc;
 //@property (nonatomic, strong) NSString *sizeTitle, *sizeDesc;
 //@property (nonatomic, strong) NSString *sauceTitle, *sauceDesc;

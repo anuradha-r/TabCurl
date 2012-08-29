@@ -76,11 +76,27 @@
     NSString *identifier = @"cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if(!cell){
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
     }
     QTKPizza *pizza = [self.pizzaInfo objectAtIndex:indexPath.section];
+    if(pizza.chosenCategoryTitle !=nil){
     cell.textLabel.text = pizza.chosenCategoryTitle;
     cell.detailTextLabel.text = pizza.chosenCategoryDesc;
+    }
+    else{
+        cell.textLabel.text = [NSString stringWithFormat:@"Please choose a %@", pizza.category];
+    }
+    if(!pizza.show)
+        cell.userInteractionEnabled = NO;
     return cell;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    QTKPizza *pizza = [self.pizzaInfo objectAtIndex:indexPath.section];
+    [[NSNotificationCenter defaultCenter]postNotificationName:kLeftChildCategorySelectedNotification 
+                                                       object:nil 
+                                                     userInfo:[NSDictionary dictionaryWithObject:pizza.category forKey:kLeftChildDataChangedNotificationUserInfoKey]
+     ];
+}
+
 @end
